@@ -16,10 +16,18 @@ class EditPage extends StatelessWidget {
     _controller.text = taskName;
     
     return Scaffold(
+      backgroundColor: Color(0xff202020),
       appBar: AppBar(
-        title: Center(
-          child: Text('Edit task'),
+        iconTheme: IconThemeData(
+          color: Colors.white
         ),
+        title: Center(
+          child: Text('Edit task', style: TextStyle(
+            fontWeight: FontWeight.bold, 
+            color: Colors.white
+          ), ),
+        ),
+        backgroundColor: Color(0xff202020),
       ),
       body: Padding(
         padding: EdgeInsets.all(16), 
@@ -28,8 +36,30 @@ class EditPage extends StatelessWidget {
           children: [
             TextField(
               controller: _controller,
+              maxLength: 17,
+              style: TextStyle(
+                color: Colors.white
+              ),
               decoration: InputDecoration(
-                hintText: 'Edit'
+                hintText: 'Edit',
+                hintStyle: TextStyle(
+                  color: Colors.white
+                ), 
+                filled: true, 
+                fillColor: Color(0xff202020), 
+                enabledBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    color: Color(0xff373737),
+                  ), 
+                  borderRadius: BorderRadius.circular(15)
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    color: Color(0xff373737)
+                  ), 
+                  borderRadius: BorderRadius.circular(15)
+                ) 
+                
               ),
             ),
           SizedBox(height: 20,), 
@@ -40,14 +70,20 @@ class EditPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 }, 
-                child: Text('Batal')
+                child: Text('Batal',
+                style: TextStyle(
+                  color: Colors.white
+                ),)
                 ), 
                 ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll<Color>(Color(0xff626ED9)),
+                  ),
                   onPressed: () {
                     onSave(_controller.text);
                     Navigator.pop(context);
                   }, 
-                  child: Text('Simpan')
+                  child: Text('Simpan', style: TextStyle(color: Colors.black),)
                   )
             ],
           )

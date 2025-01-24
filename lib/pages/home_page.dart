@@ -84,7 +84,6 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20), 
         child: Row(
-          
           children: [
             Expanded(
               child: Padding(

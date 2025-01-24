@@ -81,11 +81,12 @@ class TodoList extends StatelessWidget {
               
               ElevatedButton.icon(
                 iconAlignment: IconAlignment.start,
-                style: ButtonStyle(
-                  
+                style: taskCompleted ? ButtonStyle(
                   backgroundColor: WidgetStatePropertyAll<Color>(Color(0xffECBB5B)),
-                ),
-                onPressed: editFunction, 
+                ) : ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll<Color>(Color(0xffECBB5B)),
+                ), 
+                onPressed: taskCompleted ? DoNothingAction.new : editFunction,
                 icon: Icon(MdiIcons.pen, color: Colors.black,), 
                 label:Text('Edit', 
                 style: TextStyle(color: Colors.black),),
