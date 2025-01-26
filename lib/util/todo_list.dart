@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 //import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class TodoList extends StatelessWidget {
   const TodoList({
@@ -35,6 +37,7 @@ class TodoList extends StatelessWidget {
               foregroundColor: Colors.black,
               onPressed: deleteFunction, 
               icon: MdiIcons.delete,
+              label: "DELETE",
               borderRadius: BorderRadius.circular(15),
               padding: EdgeInsets.all(5),
             )

@@ -17,7 +17,10 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.poppinsTextTheme()
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+        textTheme: GoogleFonts.poppinsTextTheme(),
+        useMaterial3: true, 
+        unselectedWidgetColor: Colors.black
       ),
       home: HomePage()
     );
