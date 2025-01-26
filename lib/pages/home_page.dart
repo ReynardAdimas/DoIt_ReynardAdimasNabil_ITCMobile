@@ -33,8 +33,11 @@ class _HomePageState extends State<HomePage> {
 
   void saveNewTask() {
     setState(() {
-      toDoList.add([_controller.text, false]); 
-      _controller.clear();
+      if(_controller.text != "")
+      {
+        toDoList.add([_controller.text, false]); 
+        _controller.clear();
+      }
     });
   }
 
@@ -92,9 +95,11 @@ class _HomePageState extends State<HomePage> {
                   controller: _controller,
                   maxLength: 17,
                   style: TextStyle(
-                    color: Colors.white
+                    color: Colors.white, 
+                    
                   ),
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     hintText: 'Masukkan kegiatan', 
                     hintStyle: TextStyle(
                       color: Colors.white
